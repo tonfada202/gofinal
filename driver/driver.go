@@ -3,6 +3,7 @@ package driver
 import (
 	"database/sql"
 	"log"
+	"os"
 )
 
 var db *sql.DB
@@ -10,8 +11,8 @@ var url = "postgres://gdipzyef:cUya0IVsMv02m2LPbFMZDVM8_pOa0Agw@lallah.db.elepha
 
 func ConnectSQL() *sql.DB {
 	var err error
-	db, err = sql.Open("postgres", url)
-	//db, err := sql.Open("postgres", os.Getenv("DATABASE_URL")) // ตอนสอบต้อง
+	//db, err = sql.Open("postgres", url)
+	db, err := sql.Open("postgres", os.Getenv("DATABASE_URL")) // ตอนสอบต้อง
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -19,8 +20,8 @@ func ConnectSQL() *sql.DB {
 }
 
 func CreateTable() {
-	db, err := sql.Open("postgres", url)
-	//db, err := sql.Open("postgres", os.Getenv("DATABASE_URL")) // ตอนสอบต้อง
+	//db, err := sql.Open("postgres", url)
+	db, err := sql.Open("postgres", os.Getenv("DATABASE_URL")) // ตอนสอบต้อง
 	if err != nil {
 		log.Fatal(err)
 		return
