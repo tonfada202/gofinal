@@ -7,7 +7,6 @@ import (
 )
 
 var db *sql.DB
-var url = "postgres://gdipzyef:cUya0IVsMv02m2LPbFMZDVM8_pOa0Agw@lallah.db.elephantsql.com:5432/gdipzyef"
 
 func ConnectSQL() *sql.DB {
 	var err error
